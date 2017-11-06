@@ -141,7 +141,11 @@ public class JHTAlertController: UIViewController, UIViewControllerTransitioning
          messageLabel.textColor = messageTextColor
       }
    }
-   private var message: String!
+   public var message = "" {
+      didSet {
+         messageLabel.text = message
+      }
+   }
    
    // MARK:  ButtonContainer
    private var buttonContainerView = UIStackView()
